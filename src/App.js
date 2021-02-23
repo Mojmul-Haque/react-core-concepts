@@ -2,19 +2,41 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+    const person ={
+        name: 'Mojmul',
+        age: 20,
+        hobby: 'Proggraming',
+
+    }
+
+    const style ={
+        color: 'red',
+        background: 'lime',
+        fontSize: "54px",
+        fontWeight: 700,
+        padding: '10px 20px'
+    }
+    
+  
+
     return ( 
     <div className = "App" >
         <header className = "App-header" >
-        <img src = { logo }
-        className = "App-logo"
-        alt = "logo"/>
-        <p>
-            Edit done by me.<code> src / App.js </code> and save to reload. </p>
-            <img src="logo192.png" className="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" />
+        <h2 style={{color: 'yellow', background: 'tomato'}}>Name: {person.name}</h2>
+        <h3>Age: {person.age}</h3>
+        <h4 style = {style}>Hobby: {person.hobby}</h4>
+        <ul id="friend-list"></ul>
         </header>  
          
     </div>
     );
+  
 }
-
+const frinds = ['Mojmul', 'Alamin', 'Anamul', 'Jannat','Sagor']
+frinds.forEach(e => {
+const li = document.createElement('li')
+li.innerText = e;
+document.getElementById('friend-list').appendChild(li)
+});
 export default App;
